@@ -38,6 +38,8 @@ if exists(":Bundle")
     Bundle 'git://github.com/tpope/vim-haml.git'
     Bundle 'git://github.com/motemen/git-vim.git'
     Bundle 'git://github.com/godlygeek/tabular.git'
+    Bundle 'git://github.com/kchmck/vim-coffee-script.git'
+    Bundle 'git://github.com/nono/vim-handlebars.git'
     " ideas for future?
     " Bundle 'http://www.vim.org/scripts/download_script.php?src_id=16015'
     " NOTE: you should also use the solarized terminal theme for this to work correctly: https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized
