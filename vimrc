@@ -183,6 +183,9 @@ map & :tabclose<CR>
 map 8 :tabprev<CR>
 map 9 :tabnext<CR>
 
+set textwidth=80
+set colorcolumn=+1,+2,+3,+4,+5,+6,+7,+8,+9,+10,+11,+12,+13,+14,+15,+16,+17,+18,+19,+20,+21,+22,+23,+24,+25,+26,+27,+28,+29
+
 map <F6> :!osascript -e 'tell application "Safari"' -e 'set URL of document 0 to (get URL of document 0)' -e 'activate' -e 'end tell'<CR>
 nnoremap <silent> <F7> :Tlist<CR>  " Tlist plugin toggle
 
@@ -197,7 +200,7 @@ map <F2> :cwindow<CR>
 map <F3> :cnext<CR>
 map <F4> :cprev<CR>
 map <F5> :cclose<CR>
-set wrap
+set nowrap
 set expandtab
 set sw=4  " shift width 
 set ts=4  " tab stop
@@ -209,7 +212,7 @@ set pastetoggle=<F5>   " meta-p (works on mac, not sure elsewhere)
 set smartindent   
 set autoindent    " always set autoindenting on
 set formatoptions=qroct
-set textwidth=0   " Don't wrap words by default
+set textwidth=80
 set nobackup    " Don't keep a backup file
 set nowritebackup
 set viminfo='20,\"50  " read/write a .viminfo file, don't store more than 50 lines of registers
