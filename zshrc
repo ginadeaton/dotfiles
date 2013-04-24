@@ -89,7 +89,6 @@ function precmd { # runs before the prompt is rendered each time
 
     # put in here so length recalulation works well and prompts don't wrap
     PROMPT='[\
-$PR_SCREEN\
 $(git_current_branch)\
 ]:\
 ${PR_LAST_EXIT}\
