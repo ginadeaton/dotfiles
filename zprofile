@@ -25,14 +25,14 @@ source ~/.zprofile.local
 # auto-run screen, but only once
 # Be sure to munge path or set $SCREEN in .zshenv
 # MUST be done last or the rest of the .zprofile script doesn't run until after screen terminates.
-if ps x | grep -i "SCREEN -S MainScreen" | grep -v grep &> /dev/null
-then
-    echo "Screen is already running."
-else
-    echo "Starting screen..."
-    if [ -z $SCREEN ]; then
-        SCREEN=screen
-    fi
-    $SCREEN -S MainScreen
-fi
+# if ps x | grep -i "SCREEN -S MainScreen" | grep -v grep &> /dev/null
+# then
+#     echo "Screen is already running."
+# else
+#     echo "Starting screen..."
+#     if [ -z $SCREEN ]; then
+#         SCREEN=screen
+#     fi
+#     $SCREEN -S MainScreen
+# fi
 
