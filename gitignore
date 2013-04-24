@@ -1,3 +1,5 @@
 .DS_Store
 vim/bundle
 *.sw[op]
+.rvmrc
+.ruby-version

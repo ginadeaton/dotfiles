@@ -17,7 +17,7 @@ alias base64urldecode='tr "\-_" "+/" | base64 -d | more'
 alias vi=vim
 alias vipager='vim -R -'
 alias pb='git planbox'
-alias rake='noglob rake'
+# alias rake='noglob rake'
 alias ramdisk='diskutil erasevolume HFS+ "ramdisk" `hdiutil attach -nomount ram://4194304`'
 
 # php helpers
@@ -153,3 +153,6 @@ fi
 
 # override with local settings
 source ~/.zshrc.local
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/bin:/usr/local/heroku/bin:$PATH"

@@ -40,6 +40,7 @@ if exists(":Bundle")
     Bundle 'git://github.com/godlygeek/tabular.git'
     Bundle 'git://github.com/kchmck/vim-coffee-script.git'
     Bundle 'git://github.com/nono/vim-handlebars.git'
+    Bundle 'git://github.com/tpope/vim-cucumber.git'
     " ideas for future?
     " Bundle 'http://www.vim.org/scripts/download_script.php?src_id=16015'
     " NOTE: you should also use the solarized terminal theme for this to work correctly: https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized
@@ -183,9 +184,8 @@ map & :tabclose<CR>
 map 8 :tabprev<CR>
 map 9 :tabnext<CR>
 
-set textwidth=80
-set colorcolumn=+1,+2,+3,+4,+5,+6,+7,+8,+9,+10,+11,+12,+13,+14,+15,+16,+17,+18,+19,+20,+21,+22,+23,+24,+25,+26,+27,+28,+29
-
+highlight ColorColumn ctermbg=DarkGray
+set colorcolumn=81
 map <F6> :!osascript -e 'tell application "Safari"' -e 'set URL of document 0 to (get URL of document 0)' -e 'activate' -e 'end tell'<CR>
 nnoremap <silent> <F7> :Tlist<CR>  " Tlist plugin toggle
 
@@ -212,7 +212,6 @@ set pastetoggle=<F5>   " meta-p (works on mac, not sure elsewhere)
 set smartindent   
 set autoindent    " always set autoindenting on
 set formatoptions=qroct
-set textwidth=80
 set nobackup    " Don't keep a backup file
 set nowritebackup
 set viminfo='20,\"50  " read/write a .viminfo file, don't store more than 50 lines of registers
@@ -231,6 +230,7 @@ syntax on
 " add flash syntax support, from http://www.abdulqabiz.com/blog/archives/flash_and_actionscript/vim_actionscript_and.php
 au BufNewFile,BufRead *.as set filetype=actionscript syntax=actionscript
 au BufNewFile,BufRead *.php set filetype=php syntax=php
+au BufNewFile,BufRead *.thor set filetype=ruby syntax=ruby
 
 " php options - eventually put these in an autocmd group or whatever to make them local to PHP files
 set keywordprg=~/.vim/php_lookup " map shift-k to lookup commands on PHP web site
@@ -336,6 +336,8 @@ function! DoLint()
     execute ":!ruby -c % | head -20"
   elseif &filetype == 'php'
     execute ":!/usr/bin/php -l % | head -20"
+  elseif &filetype == 'coffee'
+    execute ":!/usr/bin/coffeelint % | head -20"
   else
     echohl ErrorMsg
     echo 'No linter set up for filetype' &filetype
