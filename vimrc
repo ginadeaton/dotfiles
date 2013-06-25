@@ -41,6 +41,7 @@ if exists(":Bundle")
     Bundle 'git://github.com/kchmck/vim-coffee-script.git'
     Bundle 'git://github.com/nono/vim-handlebars.git'
     Bundle 'git://github.com/tpope/vim-cucumber.git'
+    Bundle 'git://github.com/scrooloose/nerdtree.git'
     " ideas for future?
     " Bundle 'http://www.vim.org/scripts/download_script.php?src_id=16015'
     " NOTE: you should also use the solarized terminal theme for this to work correctly: https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized
@@ -130,6 +131,9 @@ map <S-b> <Plug>CamelCaseMotion_b
 " taglist
 nmap <Leader>a :TlistToggle<CR>
 nmap <C-\> :tselect<CR>
+
+" Control+N toggles NERDTree 
+map <C-n> :NERDTreeToggle<CR>
 
 " I don't understand vundle enough quite yet; even though Bundle 'Align' is above, exists(":AlignCtrl") never passed during .vimrc
 " So to hack around this for now I lazy-config Align otf.
